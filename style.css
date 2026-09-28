@@ -1,13 +1,13 @@
 /* Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-body { background-color: #0a0a0a; color: #f0f0f0; }
+body { background-color: #0a0a0a; color: #f0f0f0; scroll-behavior: smooth; }
 
 /* Header */
 header {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 5%; background: rgba(0, 0, 0, 0.9);
-    border-bottom: 2px solid #ffd700; /* Warna Emas GHOF */
-    position: sticky; top: 0; z-index: 1000;
+    padding: 20px 5%; background: rgba(0, 0, 0, 0.95);
+    border-bottom: 2px solid #ffd700;
+    position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px);
 }
 .logo { font-size: 26px; font-weight: 800; color: #ffd700; letter-spacing: 2px; }
 nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; transition: 0.3s; }
@@ -18,31 +18,37 @@ nav a:hover { color: #ffd700; }
     height: 80vh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://wallpaperaccess.com/full/1125072.jpg');
-    background-size: cover; background-position: center; text-align: center;
+    background-size: cover; background-position: center; text-align: center; padding: 0 20px;
 }
-.hero h1 { font-size: 3.5rem; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+.hero h1 { font-size: 3.5rem; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); line-height: 1.2; }
 .hero button {
-    margin-top: 20px; padding: 12px 30px; background: #ff0000; color: white;
+    margin-top: 20px; padding: 15px 35px; background: #ff0000; color: white;
     border: none; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 50px;
-    transition: transform 0.2s;
+    transition: transform 0.2s; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
 .hero button:hover { transform: scale(1.05); background: #cc0000; }
 
-/* Container */
+/* Container Umum */
 .container { padding: 60px 10%; }
 h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #fff; border-bottom: 3px solid #ffd700; display: inline-block; padding-bottom: 5px; }
 
-/* Video Wrapper */
+/* Video Wrapper & Tombol YT */
 .video-wrapper {
     max-width: 900px; margin: 0 auto;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-    border: 2px solid #333;
+    border: 2px solid #333; border-radius: 10px; overflow: hidden;
 }
-.stream-status { text-align: center; margin-top: 10px; color: #888; font-size: 0.9rem; }
+.btn-yt-direct {
+    display: inline-block; padding: 12px 25px; background: #ff0000; color: white;
+    text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; border: 2px solid #ff0000;
+}
+.btn-yt-direct:hover { background: transparent; color: #ff0000; }
+.btn-yt-direct i { margin-right: 8px; }
 
 /* Schedule Box */
 .schedule-box {
     max-width: 800px; margin: 0 auto; background: #1a1a1a; border-radius: 10px; overflow: hidden;
+    border: 1px solid #333;
 }
 .match-row {
     display: flex; justify-content: space-between; align-items: center;
@@ -54,7 +60,6 @@ h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #fff; bord
 .badge { padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
 .live { background: #ff0000; color: white; animation: blink 1.5s infinite; }
 .upcoming { background: #333; color: #aaa; }
-
 @keyframes blink { 50% { opacity: 0.5; } }
 
 /* Team Grid */
@@ -66,14 +71,4 @@ h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #fff; bord
     border-left: 4px solid #ffd700; transition: 0.3s;
 }
 .team-card:hover { transform: translateY(-5px); background: #1f1f1f; }
-.team-name { font-size: 1.4rem; color: #ffd700; margin-bottom: 15px; font-weight: bold; }
-.player-list { list-style: none; }
-.player-list li {
-    display: flex; justify-content: space-between; padding: 8px 0;
-    border-bottom: 1px solid #222; color: #ccc;
-}
-.role-tag { background: #333; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
-
-/* Footer */
-footer { text-align: center; padding: 40px; background: #050505; color: #555; margin-top: 50px; }
-.socials a { color: #ffd700; margin: 0 10px; font-size: 1.5rem; text-decoration: none; }
+.team-name { font-size: 1.4rem; color: #ffd700; margin-bottom: 15px; font-weight
